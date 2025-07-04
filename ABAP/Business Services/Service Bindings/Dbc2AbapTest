@@ -1,0 +1,8 @@
+Binding Type: SQL - Web API
+Service Definition: DBC2ABAP_TEST
+Enabled Operations:
+- SELECT
+- INSERT
+- DELETE
+- REPLICATE
+- EXECUTE

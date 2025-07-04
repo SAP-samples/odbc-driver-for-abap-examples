@@ -1,0 +1,65 @@
+; this file can be used as template for your odbc.ini file on Unix
+; find out the location of your odbc.ini file with command "odbcinst -j"
+; e.g. ~/.odbc.ini
+
+; example entries for DSN=MYDSN
+
+; on Windows, the same entries are stored in the Registry
+
+[MYDSN]
+Driver=<path>/ODBC_driver_for_ABAP.so
+Host=<sap_system_host>
+Port=<sap_system_port>
+Client=<client>
+CryptoLibrary=<path>/libsapcrypto.so
+
+; on test systems, TrustAll=true (default: false) can be used instead of PseFile
+PseFile=<path_to_pse_file>
+; TrustAll=true
+
+; type mapping with decimal shift and iso langugage conversion
+TypeMap=semantic
+; alternatives: native, semanticDatsTimsAsWchar
+
+; convert Decfloat to characters, default: Decfloat
+; DecFloatSqlType=WVarchar
+
+; if not provided by the ODBC application
+; Uid=<user_id>
+; Pwd=<password>
+
+; default authentication via UID/PWD (UidPwd)
+; browser authentication on cloud systems
+; AuthenticationType=Browser
+; AuthenticationUrl=https://<host>:<port>/sap/bc/sec/reentrance
+; authentication via client certificate
+; AuthenticationType=X509
+; UserCertificates=<path>
+
+; optional if alias user name should be used, default: Uid
+; UidType=alias
+
+; for privileged access without DCLs
+ServicePath=/sap/bc/sql/sql1/sap/S_PRIVILEGED
+
+; optional logon language
+; Language=EN
+
+; optional proxy settings
+; ProxyHost=<host>
+; ProxyPort=<port>
+
+; optional trace settings:
+; Trace=None, Error, Warning, Info, Debug
+; TraceFlush=true
+; TracePath=<path_of_trace_files>
+
+; optional RFC trace settings
+; RfcTrace = 0..3
+; RfcSocketTrace = 0..3
+; CpicTrace = 0..3
+; RfcTraceMaxFileSize = 512M
+; RfcTraceMaxStoredFile = 2
+
+; relevant for DB2 federation only:
+; DriverUnicodeType=1

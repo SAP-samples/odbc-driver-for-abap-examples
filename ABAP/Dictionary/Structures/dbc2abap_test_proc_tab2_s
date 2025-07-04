@@ -1,0 +1,8 @@
+@EndUserText.label : 'procedure call example, structure for second table type'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+define structure dbc2abap_test_proc_tab2_s {
+
+  ind : int4;
+  num : int4;
+
+}

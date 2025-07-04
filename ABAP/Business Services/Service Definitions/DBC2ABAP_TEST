@@ -1,0 +1,8 @@
+ @EndUserText.label: 'Test Content Service Definition for SQL'
+define service DBC2ABAP_TEST
+  provider contracts sql {
+  expose        DBC2ABAP_TEST_GET_TIME                          as get_time_view;
+  expose        DBC2ABAP_WRITABLE_VIEW                          as writable_view;
+  expose method cl_dbc2abap_test_procedures=>get_time           as get_time_proc;
+  expose method cl_dbc2abap_test_procedures=>table_in_table_out as table_in_table_out;
+}

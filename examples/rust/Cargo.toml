@@ -1,0 +1,12 @@
+[package]
+name = "odbc_test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+odbc-api = { version = "9.0", features = ["odbc_version_3_5"] }
+text_io = "0.1"
+rpassword = "7.3"
+
+[workspace]

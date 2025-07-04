@@ -1,0 +1,14 @@
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_ALLOWED
+@EndUserText.label: 'SQL Service Test Content: ABAP Version'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+  serviceQuality: #X,
+  sizeCategory: #S,
+  dataClass: #MIXED
+}
+/*+[hideWarning] { "IDS" : [ "KEY_CHECK" ] }*/
+define view entity DBC2ABAP_TEST_GET_TIME as select from svers {
+  key cast ('NOW' as abap.char(20)) as time_point,
+  utcl_current( ) as timestamp_utc
+}

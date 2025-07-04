@@ -1,0 +1,8 @@
+@EndUserText.label : 'Result structure for retrieval of the current UTC timestamp'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+define structure dbc2abap_test_utctimestamp_res {
+
+  time_point    : abap.char(20);
+  timestamp_utc : utcl;
+
+}

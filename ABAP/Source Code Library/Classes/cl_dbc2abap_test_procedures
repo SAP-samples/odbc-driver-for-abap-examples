@@ -1,0 +1,34 @@
+class cl_dbc2abap_test_procedures definition
+  public
+  final
+  create public .
+
+  public section.
+    interfaces if_amdp_marker_hdb.
+    class-methods get_time for sql service
+      amdp options cds session client dependent read-only
+      exporting value(ex_time) type dbc2abap_test_utctimestamp_tab.
+    class-methods table_in_table_out for sql service
+      amdp options cds session client dependent read-only
+      importing value(in_scalar) type int4
+                value(in_table) type dbc2abap_test_proc_tab1_t
+      exporting value(out_table_1) type dbc2abap_test_proc_tab1_t
+                value(out_table_2) type dbc2abap_test_proc_tab2_t.
+  protected section.
+  private section.
+endclass.
+
+
+
+class cl_dbc2abap_test_procedures implementation.
+  method get_time by database procedure for hdb language sqlscript
+    using dbc2abap_test_get_time.
+
+    ex_time = select time_point, timestamp_utc from dbc2abap_test_get_time;
+
+  endmethod.
+  method table_in_table_out by database procedure for hdb language sqlscript.
+    out_table_1 = select ind, text, :in_scalar as num from :in_table;
+    out_table_2 = select ind, num from :in_table;
+  endmethod.
+endclass.
