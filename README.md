@@ -3,9 +3,9 @@
 
 ## Description
 This repository contains examples for using the _ODBC driver for ABAP_ in various programming languages.
-Information on how to run the expamle programs and prerequesits can be found either as comments in the code or in `readme.md` files in the respective directories.
+Information on how to run the example programs and prerequisites can be found either as comments in the code or in `readme.md` files in the respective directories.
 
-The folder `examples` contains the actual examples, most are sorted in subfolders for each programming language, the folder `unix` contains a configuartion template for the `unixodbc` driver manager.
+The folder `examples` contains the actual examples, most are sorted in subfolders for each programming language, the folder `unix` contains a configuration template for the `unixodbc` driver manager.
 
 The folder `ABAP` contains a text representation of the ABAP objects required by the examples.
 The contents is also released as the ABAP package `BASIS/SABP_MAIN/SABP/SABP_DBC2ABAP/SABP_DBC2ABAP_TEST`, but some objects might not be available in older releases.
