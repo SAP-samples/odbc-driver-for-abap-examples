@@ -18,6 +18,14 @@ On Windows, the standard ODBC driver manager is used.
 For Unix systems, the ODBC driver manager [unixodbc](https://www.unixodbc.org/) is required for almost all examples.
 Other driver managers are not supported.
 
+Some features showcased in the examples have minimum version requirements:
+
+| Features | SAP system version | ODBC driver version |
+| --- | --- | --- |
+| `select` | 2021 FPS01 | |
+| `call` | 2025 / 2502 | |
+| `insert`, `delete` | 2025 / 2508 | 01.00.0021 |
+
 ## Download and Installation
 The examples in this repository are provided as source code.
 They can be obtained by cloning the repository or by downloading individual files via the browser.

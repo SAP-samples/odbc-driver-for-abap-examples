@@ -12,6 +12,8 @@ import pyodbc
 #
 # run with
 # python array_dml_demo.py
+#
+# Minimum ODBC driver version: 01.00.0021
 
 
 def truncate_data(conn):
