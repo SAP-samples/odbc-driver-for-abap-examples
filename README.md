@@ -22,8 +22,8 @@ Some features showcased in the examples have minimum version requirements:
 
 | Features | SAP system version | ODBC driver version |
 | --- | --- | --- |
-| `select` | 2021 FPS01 | |
-| `call` | 2025 / 2502 | |
+| `select` | 2021 FPS01 | 01.00.0000 |
+| `call` | 2025 / 2502 | 01.00.0018 |
 | `insert`, `delete` | 2025 / 2508 | 01.00.0021 |
 
 ## Download and Installation
