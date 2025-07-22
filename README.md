@@ -1,5 +1,5 @@
 # Examples for the ABAP ODBC driver
-![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/odbc-driver-for-abap-examples)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/odbc-driver-for-abap-examples)](https://api.reuse.software/info/github.com/SAP-samples/odbc-driver-for-abap-examples)
 
 ## Description
 This repository contains examples for using the _ODBC driver for ABAP_ in various programming languages.
