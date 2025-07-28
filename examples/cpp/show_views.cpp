@@ -50,10 +50,10 @@
 // complete connection string, the unixODBC module is not required.
 // (1) using the ODBC driver for ABAP directly.
 //     Compile the program with:
-//     g++ query.cpp -o query -L <install dir of ODBC_driver_for_ABAP.so>                     \
+//     g++ show_views.cpp -o show_views -L <install dir of ODBC_driver_for_ABAP.so>                     \
 //        -l:ODBC_driver_for_ABAP.so -lc
 // (2) The ODBC driver for ABAP is loaded by the unixODBC driver manager
-//     g++ query.cpp -o query -lodbc -lc
+//     g++ show_views.cpp -o show_views -lodbc -lc
 //
 
 // WINDOWS:
@@ -66,7 +66,7 @@
 // To compile the example with Microsoft Visual Studio from command line
 // you first need to initialize the command line environment in a cmd window using vcvars64.bat.
 // Afterwards you can compile the program using the following cl command.
-// cl.exe /EHsc query.cpp /link odbc32.lib
+// cl.exe /EHsc show_views.cpp /link odbc32.lib
 //
 
 void           check_error(SQLRETURN rc, SQLSMALLINT handleType, SQLHANDLE handle);
