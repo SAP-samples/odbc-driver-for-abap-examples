@@ -1,5 +1,5 @@
 # run in powershell window
-# odbc_call_procedure.ps1
+# call_procedure.ps1
 
 # input connection parameters
 Write-Output "";
