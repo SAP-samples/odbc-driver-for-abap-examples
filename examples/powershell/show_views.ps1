@@ -1,5 +1,5 @@
 # run in powershell window
-# odbc_show_views.ps1
+# show_views.ps1
 
 # input connection parameters
 Write-Output "";
