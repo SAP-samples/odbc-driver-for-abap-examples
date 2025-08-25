@@ -1,3 +1,7 @@
 # Rust
 Cargo.lock
 target/
+
+# C# / .NET
+bin/
+obj/
