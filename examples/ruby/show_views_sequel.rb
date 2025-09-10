@@ -1,4 +1,5 @@
 # the following gem needs to be installed before running this program
+# gem install ruby-odbc
 # gem install sequel
 # gem install io-console
 #

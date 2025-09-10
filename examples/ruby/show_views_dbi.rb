@@ -1,4 +1,5 @@
 # the following gems need to be installed before running this program
+# gem install ruby-odbc
 # gem install dbi
 # gem install dbd-odbc
 # gem install io-console
@@ -38,8 +39,6 @@ begin
 
   # Clean up
   stmt.finish
-  conn.disconnect
-  puts "Disconnected from the database."
 
 rescue DBI::DatabaseError => e
   puts "An error occurred"
@@ -48,5 +47,12 @@ rescue DBI::DatabaseError => e
 ensure
   # Ensure resources are released if an error occurs
   stmt.finish if stmt && !stmt.finished?
-  conn.disconnect if conn && conn.connected?
+  begin
+    conn.disconnect if conn 
+  rescue
+    # disconnect will call ODBC function SQLEndTran()
+    # which is not implemented by ODBC driver for ABAP
+    # The corresponding DatabaseError is rescued
+    # "IM001 (0) [unixODBC][Driver Manager]Driver does not support this function"
+  end
 end
