@@ -1,0 +1,11 @@
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Devtober Order'
+@Metadata.ignorePropagatedAnnotations: true
+define writable view entity Z_DEVTOBER_ORDER_V as select from Z_DEVTOBER_ORDER
+{
+  key id as DevtoberOrderId,
+  time as DevtoberTime,
+  beer_amount as DevtoberBeerAmount,
+  food_amount as DevtoberFoodAmount
+}

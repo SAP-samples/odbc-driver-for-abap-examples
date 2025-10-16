@@ -1,0 +1,7 @@
+Binding Type: SQL - Web API
+Service Definition: ZDEVTOBER_ORDER_SYSTEM
+Enabled Operations:
+- SELECT
+- INSERT
+- DELETE
+- EXECUTE

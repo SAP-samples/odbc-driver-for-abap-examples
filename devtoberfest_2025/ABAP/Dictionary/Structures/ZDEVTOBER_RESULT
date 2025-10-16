@@ -1,0 +1,9 @@
+@EndUserText.label : 'Devtober Result'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+define structure zdevtober_result {
+
+  year      : abap.int4;
+  beer_sold : abap.int4;
+  food_sold : abap.int4;
+
+}
