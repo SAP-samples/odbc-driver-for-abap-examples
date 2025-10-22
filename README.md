@@ -7,8 +7,10 @@ Information on how to run the example programs and prerequisites can be found ei
 
 The folder `examples` contains the actual examples, most are sorted in subfolders for each programming language, the folder `unix` contains a configuration template for the `unixodbc` driver manager.
 
-The folder `ABAP` contains a text representation of the ABAP objects required by the examples.
+The top-level folder [ABAP](./ABAP/) contains text representations of ABAP objects used in most examples.
 The contents is also released as the ABAP package `BASIS/SABP_MAIN/SABP/SABP_DBC2ABAP/SABP_DBC2ABAP_TEST`, but some objects might not be available in older releases.
+
+Additional `ABAP` folders may be present in sub-projects (e.g., [devtoberfest_2025](./devtoberfest_2025/)), each containing their own scenario. These are not necessarily included in the ABAP package mentioned above.
 
 ## Requirements
 All examples require the _ODBC driver for ABAP_ to be installed on the client.

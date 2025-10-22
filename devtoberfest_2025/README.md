@@ -18,7 +18,7 @@ This project demonstrates how to interact with an ABAP system using ODBC from a 
     - DSN, username, and password must be configured in a `.env` file in the project directory.
 
 - **Required ABAP Artifacts**
-    - The necessary ABAP artifacts (such as service definition, service binding, CDS entities and classes) must be created in your ABAP system before running this application. Please refer to the `ABAP` folder in this project for details on which artifacts are needed and how to create them.
+    - The necessary ABAP artifacts (such as service definition, service binding, CDS entities and classes) must be created in your ABAP system before running this application. Please refer to the [ABAP](./ABAP/) folder in this project for details on which artifacts are needed and how to create them.
 
 ## How to Run
 
