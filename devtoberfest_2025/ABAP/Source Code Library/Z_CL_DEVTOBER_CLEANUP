@@ -1,0 +1,30 @@
+CLASS z_cl_devtober_cleanup DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS z_cl_devtober_cleanup IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+    DELETE FROM z_devtober_order.
+
+    DATA dummy TYPE TABLE OF z_devtober_order.
+
+    DO 10 TIMES.
+      APPEND VALUE #( beer_amount = sy-index food_amount = sy-index ) TO dummy.
+    ENDDO.
+
+    INSERT z_devtober_order FROM ( SELECT uuid( ) , utcl_add_seconds( utcl_current( ), -32000000 ), dummy~beer_amount, dummy~food_amount FROM @dummy AS dummy ) .
+    INSERT z_devtober_order FROM ( SELECT uuid( ) , utcl_add_seconds( utcl_current( ), -64000000 ), dummy~beer_amount, dummy~food_amount FROM @dummy AS dummy ) .
+    INSERT z_devtober_order FROM ( SELECT uuid( ) , utcl_add_seconds( utcl_current( ), -96000000 ), dummy~beer_amount, dummy~food_amount FROM @dummy AS dummy ) .
+  ENDMETHOD.
+
+ENDCLASS.

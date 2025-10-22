@@ -1,0 +1,53 @@
+CLASS z_cl_devtober_result_logic DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    INTERFACES if_amdp_marker_hdb.
+
+    CLASS-METHODS get_results_for_sql_service FOR SQL SERVICE
+      AMDP OPTIONS CDS SESSION CLIENT DEPENDENT READ-ONLY
+      IMPORTING VALUE(it_year_filter)     TYPE z_devtober_year_ranges
+                VALUE(iv_sum_adjustment)  TYPE z_devtober_amount
+      EXPORTING VALUE(et_result)          TYPE z_devtober_results
+                VALUE(et_result_filtered) TYPE z_devtober_results.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+
+    CLASS-METHODS get_results_int
+      AMDP OPTIONS CDS SESSION CLIENT DEPENDENT READ-ONLY
+      EXPORTING VALUE(et_result) TYPE z_devtober_results.
+ENDCLASS.
+
+
+
+CLASS z_cl_devtober_result_logic IMPLEMENTATION.
+
+  METHOD get_results_int BY DATABASE PROCEDURE FOR HDB LANGUAGE SQLSCRIPT
+    USING z_devtober_order_v.
+
+    et_result =
+      select year( DevtoberTime ) as year, sum( DevtoberBeerAmount ) as beer_sold, sum( DevtoberFoodAmount ) as food_sold
+        from z_devtober_order_v
+        group by year( DevtoberTime );
+
+  ENDMETHOD.
+
+  METHOD get_results_for_sql_service BY DATABASE PROCEDURE FOR HDB LANGUAGE SQLSCRIPT
+  USING z_cl_devtober_result_logic=>get_results_int .
+
+    call "Z_CL_DEVTOBER_RESULT_LOGIC=>GET_RESULTS_INT"( et_result => :et_result );
+
+    et_result =
+      select YEAR, beer_sold + :iv_sum_adjustment as beer_sold, food_sold + :iv_sum_adjustment as food_sold from :et_result;
+    et_result_filtered =
+      select a.*
+        from :et_result as a
+        join :it_year_filter as b
+          on a.year between b.low AND b.high;
+
+  ENDMETHOD.
+
+ENDCLASS.

@@ -1,0 +1,11 @@
+@ClientHandling.type: #CLIENT_DEPENDENT
+@AbapCatalog.deliveryClass: #APPLICATION_DATA
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Devtober Order'
+define table entity Z_DEVTOBER_ORDER
+{
+  key id : abap.raw( 16 );
+  time : abap.utclong;
+  beer_amount : abap.int4;
+  food_amount : abap.int4;  
+}

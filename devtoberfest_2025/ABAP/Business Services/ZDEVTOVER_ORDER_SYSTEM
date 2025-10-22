@@ -1,0 +1,6 @@
+@EndUserText.label: 'Devtober Order System'
+define service ZDEVTOBER_ORDER_SYSTEM
+  provider contracts sql {
+  expose        Z_DEVTOBER_ORDER_V                                      as DevtoberOrder;
+  expose method z_cl_devtober_result_logic=>get_results_for_sql_service as FilterDevtoberResult;
+}

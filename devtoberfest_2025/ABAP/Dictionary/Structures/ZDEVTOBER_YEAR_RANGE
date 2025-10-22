@@ -1,0 +1,8 @@
+@EndUserText.label : 'Devtober Year'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+define structure zdevtober_year_range {
+
+  low  : abap.int4;
+  high : abap.int4;
+
+}
